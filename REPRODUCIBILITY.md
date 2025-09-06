@@ -3,28 +3,42 @@
 ## Code Pin
 - Repo: https://github.com/DEMON110/anomaly-multi-sig-protocol
 - Commit: <PIN AFTER YOU COMMIT THESE FILES>
-- Release tag (recommended): v0.1.0
+- Release tag (recommended): v0.1.0-alpha
 
-## Environments
-- Hardhat: see `package.json`, `hardhat.config.js`
-- ML: `analysis/requirements-ml.txt`
 
-## Steps
-1) **ML side**
-   ```bash
-   pip install -r analysis/requirements-ml.txt
-   python analysis/01_make_X_test.py
-   python analysis/02_eval_threshold.py
-   python analysis/03_select_cases.py
+# Reproducibility Details
 
-import random
-import numpy as np
+This document provides the necessary information to ensure reproducibility of experiments, including the required seed values and contract addresses.
 
-# Define seed values
-training_seed = 42
-evaluation_seed = 123
-bootstrap_seed = 456
+## Reproducibility Box — Public Artefacts Repository
 
-# Set seeds for reproducibility
+- **Primary commit**: fb7af68b8915209f321c357b2eafbde6bb6065d6 
+- **Release tag**:  v0.1.0-alpha 
+- **Licence**: MIT Licence
+- **Chain ID**: 5
+
+### Contracts
+- **Policy Multisig**: 0x3551B059C2a9c4c301E8590D72a112f7aB9Fcb74
+- **Target Executor**: 0x90486f4b2703d5d40d7b3fdc1e02e20e8e6a9393
+
+### Compiler
+- **Solidity Version**:  Solidity 0.8.19
+- **Optimizer**: optimizer enabled, runs=200
+
+### Client and RPC
+- **Client**:  Infura 
+- **Endpoint**: (https://goerli.infura.io/v3/ )
+
+### Seed Values
+- **Training Seed**: 42  
+- **Evaluation Seed**: 123  
+- **Bootstrap Seed**: 456
+
+These seed values ensure that the random processes used in the experiments are consistent across different runs.
+
+## Additional Notes
+- Make sure the target executor address is valid and has the necessary permissions to execute actions in the smart contract.
+- Replace the placeholders with actual values used in your implementation (e.g., contract address, chain ID, etc.).
+
 random.seed(training_seed)
 np.random.seed(training_seed)

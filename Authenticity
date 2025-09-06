@@ -1,0 +1,20 @@
+
+---
+
+# B) Repo reproducibility & Hardhat (on-chain link)
+
+From our previous step, you already have the Hardhat scaffold. Add these small extras:
+
+## `.gitignore` (top level)
+```gitignore
+# node / hardhat
+node_modules
+cache
+artifacts
+.env
+
+# python
+.venv
+__pycache__/
+analysis_outputs/
+*.ipynb_checkpoints

@@ -38,6 +38,35 @@ module.exports = {
   }
 };
 
+# 0) install
+npm i
+
+# 1) copy .env.example -> .env and fill values
+cp .env.example .env
+
+# 2) compile
+npm run compile
+
+# 3) deploy (example: Goerli)
+npm run deploy:goerli
+# -> prints deployed address; export it for the next steps
+export CONTRACT=0xYourDeployedMsig
+
+# 4) submit a transaction (no value, arbitrary calldata, mark anomaly=true)
+export TO=0xTargetContract
+export VALUE=0
+export DATA=0x
+export ANOMALY=true
+npm run submit:goerli
+# -> note txId from console (e.g., 0)
+
+# 5) confirmations (run from 2 distinct owner keys)
+export TXID=0
+npm run confirm:goerli
+
+# 6) execute (after reaching threshold)
+npm run execute:goerli
+
 
 Obtain test ETH from https://goerlifaucet.com/.
 Deploy contracts:npx hardhat run scripts/deploy.js --network goerli

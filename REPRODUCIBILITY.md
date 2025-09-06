@@ -16,3 +16,15 @@
    python analysis/01_make_X_test.py
    python analysis/02_eval_threshold.py
    python analysis/03_select_cases.py
+
+import random
+import numpy as np
+
+# Define seed values
+training_seed = 42
+evaluation_seed = 123
+bootstrap_seed = 456
+
+# Set seeds for reproducibility
+random.seed(training_seed)
+np.random.seed(training_seed)

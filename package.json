@@ -1,0 +1,23 @@
+{
+  "name": "anomaly-multi-sig-protocol",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "compile": "hardhat compile",
+    "clean": "hardhat clean",
+    "test": "hardhat test",
+    "deploy:goerli": "hardhat run scripts/deploy.js --network goerli",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "submit:goerli": "hardhat run scripts/submit.js --network goerli",
+    "confirm:goerli": "hardhat run scripts/confirm.js --network goerli",
+    "execute:goerli": "hardhat run scripts/execute.js --network goerli"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.10"
+  }
+}
